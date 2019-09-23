@@ -1,0 +1,37 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run .jcsh script",
+            "type": "shell",
+            "command": "d:/tools/jcshell/5.17/jcshell.bat",
+            "args": [
+                "-v",
+                "-x",
+                "-d",
+                "-f",
+                "${file}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "focus": false,
+                "echo": true,
+                "showReuseMessage": false,
+                "panel": "new",
+                "clear": false,
+            },
+            "options": {
+                // very important: without this scripts won't run as expected ie. won't print apdus
+                "cwd": "d:/tools/jcshell/5.17"
+            },
+            "runOptions": {},
+            "problemMatcher": []
+        }
+    ]
+}
